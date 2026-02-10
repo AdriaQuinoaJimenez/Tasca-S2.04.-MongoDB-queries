@@ -52,7 +52,7 @@ db.restaurants.createIndex({ name: 1 });
 4. ## 📊 Query Performance Report
 
 - 🧪 **Query**: `db.restaurants.find({}, {name: 1, restaurant_id: 1, borough: 1, "address.zipcode": 1, _id: 0})`
-- ⏱️ **Execution time**: 1 ms
+- ⏱️ **Execution time**: 0 ms
 - 📚 **Documents returned**: 664
 - 🔍 **Documents examined**: 664
 - 🛠️ **Execution stage**: PROJECTION_DEFAULT
@@ -105,7 +105,7 @@ db.restaurants.createIndex({ name: 1 });
 8. ## 📊 Query Performance Report
 
 - 🧪 **Query**: `db.restaurants.find({"grades.score": {$gt: 90}}, {_id: 0})`
-- ⏱️ **Execution time**: 1 ms
+- ⏱️ **Execution time**: 2 ms
 - 📚 **Documents returned**: 2
 - 🔍 **Documents examined**: 664
 - 🛠️ **Execution stage**: PROJECTION_SIMPLE
