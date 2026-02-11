@@ -135,3 +135,14 @@ db.restaurants.createIndex({ name: 1 });
 ## ✅ No significant issues detected
 
 
+11. ## 📊 Query Performance Report
+
+- 🧪 **Query**: `db.restaurants.find( { cuisine: {$ne: "American"}, "grades.score": {$gt: 70}, "location.coordinates.0": {$lt: -65.754168} }, { _id: 0 } )`
+- ⏱️ **Execution time**: 0 ms
+- 📚 **Documents returned**: 1
+- 🔍 **Documents examined**: 3
+- 🛠️ **Execution stage**: PROJECTION_SIMPLE
+
+## ✅ No significant issues detected
+
+
