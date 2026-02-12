@@ -1,7 +1,7 @@
 1. ## 📊 Query Performance Report
 
 - 🧪 **Query**: `db.restaurants.find({}, {_id: 0})`
-- ⏱️ **Execution time**: 1 ms
+- ⏱️ **Execution time**: 0 ms
 - 📚 **Documents returned**: 664
 - 🔍 **Documents examined**: 664
 - 🛠️ **Execution stage**: PROJECTION_SIMPLE
@@ -12,7 +12,7 @@
 2. ## 📊 Query Performance Report
 
 - 🧪 **Query**: `db.restaurants.find({}, {name: 1, restaurant_id: 1, _id: 0})`
-- ⏱️ **Execution time**: 1 ms
+- ⏱️ **Execution time**: 0 ms
 - 📚 **Documents returned**: 664
 - 🔍 **Documents examined**: 664
 - 🛠️ **Execution stage**: PROJECTION_SIMPLE
@@ -32,7 +32,7 @@ db.restaurants.createIndex({ name: 1 });
 3. ## 📊 Query Performance Report
 
 - 🧪 **Query**: `db.restaurants.find({}, {name: 1, restaurant_id: 1, borough: 1, cuisine: 1, _id: 0})`
-- ⏱️ **Execution time**: 1 ms
+- ⏱️ **Execution time**: 0 ms
 - 📚 **Documents returned**: 664
 - 🔍 **Documents examined**: 664
 - 🛠️ **Execution stage**: PROJECTION_SIMPLE
@@ -159,10 +159,10 @@ db.restaurants.createIndex({ name: 1 });
 
 13. ## 📊 Query Performance Report
 
-- 🧪 **Query**: `db.restaurants.find( { cuisine: {$ne: "American"}, "grades.grade": "A", borough: {$ne: "Brookyln"}}, { _id: 0 })`
-- ⏱️ **Execution time**: 2 ms
-- 📚 **Documents returned**: 401
-- 🔍 **Documents examined**: 401
+- 🧪 **Query**: `db.restaurants.find( { cuisine: {$ne: "American"}, $nor: [{cuisine: "American"}, {borough: "Brooklyn"} ] }, { _id: 0 })`
+- ⏱️ **Execution time**: 1 ms
+- 📚 **Documents returned**: 320
+- 🔍 **Documents examined**: 535
 - 🛠️ **Execution stage**: PROJECTION_SIMPLE
 
 ## ✅ No significant issues detected
