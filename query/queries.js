@@ -38,7 +38,7 @@ db.restaurants.find( { cuisine: {$ne: "American"}, "grades.score": {$gt: 70}, "l
 db.restaurants.find( { "grades.grade": "A", $nor: [{cuisine: "American"}, {borough: "Brooklyn"} ] }, { _id: 0 })
 
 // 14. Trobar restaurant_id, name, borough i cuisine on el nom comença amb 'Wil'.
- db.restaurants.find( { name: {$gte: "Wil", $lte: "Wim"} }, { _id: 0, restaurant_id: 1, name: 1, borough: 1, cuisine: 1})
+db.restaurants.find( { name: {$gte: "Wil", $lte: "Wim"} }, { _id: 0, restaurant_id: 1, name: 1, borough: 1, cuisine: 1})
 
 // 15. Trobar restaurant_id, name, borough i cuisine on el nom acaba en 'ces'.
 
