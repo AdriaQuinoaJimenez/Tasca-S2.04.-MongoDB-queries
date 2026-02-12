@@ -9,4 +9,4 @@ db.restaurants.createIndex( {name: 1}, { name: "filtered_by_wil", partialFilterE
 db.restaurants.createIndex({name: 1});
 db.restaurants.createIndex({ borough: 1}, {name: "filtered_by_borough_and_cuisine", partialFilterExpression: {borough: "Bronx", cuisine:{$in: ["American", "Chinese"]} } });
 db.restaurants.createIndex({borough: 1}, {name: "filtered_by_borough", partialFilterExpression: {borough: {$in: ["Staten Island", "Queens", "Bronx", "Brooklyn"] } } });
-db.restaurants.createIndex({"grades.score": 1}, {name: "filtered_by_score", partialFilterExpression: {"grades.score" : {$lt: 10} } });
+db.restaurants.createIndex({"grades.score": 1}, {name: "filtered_by_score", partialFilterExpression: {"grades.score" : {$lte: 10} } });
