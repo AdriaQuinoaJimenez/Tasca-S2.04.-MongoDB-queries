@@ -52,7 +52,7 @@ db.restaurants.createIndex({ name: 1 });
 4. ## 📊 Query Performance Report
 
 - 🧪 **Query**: `db.restaurants.find({}, {name: 1, restaurant_id: 1, borough: 1, "address.zipcode": 1, _id: 0})`
-- ⏱️ **Execution time**: 0 ms
+- ⏱️ **Execution time**: 1 ms
 - 📚 **Documents returned**: 664
 - 🔍 **Documents examined**: 664
 - 🛠️ **Execution stage**: PROJECTION_DEFAULT
@@ -160,7 +160,7 @@ db.restaurants.createIndex({ name: 1 });
 13. ## 📊 Query Performance Report
 
 - 🧪 **Query**: `db.restaurants.find( { "grades.grade": "A", $nor: [{cuisine: "American"}, {borough: "Brooklyn"} ] }, { _id: 0 })`
-- ⏱️ **Execution time**: 2 ms
+- ⏱️ **Execution time**: 3 ms
 - 📚 **Documents returned**: 318
 - 🔍 **Documents examined**: 403
 - 🛠️ **Execution stage**: PROJECTION_SIMPLE
@@ -193,7 +193,7 @@ db.restaurants.createIndex({ name: 1 });
 16. ## 📊 Query Performance Report
 
 - 🧪 **Query**: `db.restaurants.find( {name: /Reg/}, { _id: 0, restaurant_id: 1, name: 1, borough: 1, cuisine: 1 })`
-- ⏱️ **Execution time**: 2 ms
+- ⏱️ **Execution time**: 1 ms
 - 📚 **Documents returned**: 4
 - 🔍 **Documents examined**: 4
 - 🛠️ **Execution stage**: PROJECTION_SIMPLE
@@ -226,7 +226,7 @@ db.restaurants.createIndex({ name: 1 });
 19. ## 📊 Query Performance Report
 
 - 🧪 **Query**: `db.restaurants.find({ borough: {$nin: ["Staten Island", "Queens", "Bronx", "Brooklyn"] } }, { _id: 0, restaurant_id: 1, name: 1, borough: 1, cuisine: 1})`
-- ⏱️ **Execution time**: 1 ms
+- ⏱️ **Execution time**: 0 ms
 - 📚 **Documents returned**: 305
 - 🔍 **Documents examined**: 305
 - 🛠️ **Execution stage**: PROJECTION_SIMPLE
@@ -252,6 +252,17 @@ db.restaurants.createIndex({ name: 1 });
 - 📚 **Documents returned**: 14
 - 🔍 **Documents examined**: 14
 - 🛠️ **Execution stage**: SUBPLAN
+
+## ✅ No significant issues detected
+
+
+22. ## 📊 Query Performance Report
+
+- 🧪 **Query**: `db.restaurants.find({"grades.grade": "A", "grades.score": 11, "grades.date": ISODate("2014-08-11T00:00:00Z")}, {_id: 0, restaurant_id: 1, name: 1, grades: 1})`
+- ⏱️ **Execution time**: 0 ms
+- 📚 **Documents returned**: 2
+- 🔍 **Documents examined**: 2
+- 🛠️ **Execution stage**: PROJECTION_SIMPLE
 
 ## ✅ No significant issues detected
 
