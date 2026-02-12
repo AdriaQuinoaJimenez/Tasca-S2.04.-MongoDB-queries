@@ -4,3 +4,4 @@ db.restaurants.createIndex({ borough: 1 });
 db.restaurants.createIndex({ "grades.score": 1 });
 db.restaurants.createIndex({ "location.coordinates.0": 1 });
 db.restaurants.createIndex( { "location.coordinates.0": 1 }, { name: "score_and_coordinates" , partialFilterExpression: { "grades.score": {$gt: 70}, "location.coordinates.0": {$lt: -65.754168} } } )
+db.restaurants.createIndex( {cuisine: -1}, { name: "filter_by_grade", partialFilterExpression:{"grades.grade": "A"} } );
