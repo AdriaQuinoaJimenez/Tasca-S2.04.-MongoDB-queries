@@ -11,4 +11,4 @@ db.restaurants.createIndex({ borough: 1}, {name: "filtered_by_borough_and_cuisin
 db.restaurants.createIndex({borough: 1}, {name: "filtered_by_borough", partialFilterExpression: {borough: {$in: ["Staten Island", "Queens", "Bronx", "Brooklyn"] } } });
 db.restaurants.createIndex({"grades.score": 1}, {name: "filtered_by_score", partialFilterExpression: {"grades.score" : {$lte: 10} } });
 db.restaurants.createIndex({ cuisine: 1 });
-db.restaurants.createIndex({"grades.grade": 1}, {name: "filtered_by_score_and_score_isodate", partialFilterExpression: {"grades.grade": "A", "grades.score": 11, "grades.date": ISODate("2014-08-11T00:00:00.000Z")} } })
+db.restaurants.createIndex({"grades.grade": 1}, {name: "filtered_by_score_and_score_isodate", partialFilterExpression: {"grades.grade": "A", "grades.score": 11, "grades.date": ISODate("2014-08-11T00:00:00.000Z")} })
