@@ -35,7 +35,7 @@ db.restaurants.find( { $and: [ {cuisine: {$ne: "American"}}, {"grades.score": {$
 db.restaurants.find( { cuisine: {$ne: "American"}, "grades.score": {$gt: 70}, "location.coordinates.0": {$lt: -65.754168} }, { _id: 0 } )
 
 // 13. Trobar restaurants que no són 'American', grau 'A', i no són de Brooklyn. Ordenats per cuisine descendent.
-db.restaurants.find( { cuisine: {$ne: "American"}, "grades.grade": "A", borough: {$ne: "Brookyln"}}, { _id: 0 })
+db.restaurants.find( { cuisine: {$ne: "American"}, $nor: [{cuisine: "American"}, {borough: "Brooklyn"} ] }, { _id: 0 })
 
 // 14. Trobar restaurant_id, name, borough i cuisine on el nom comença amb 'Wil'.
 
