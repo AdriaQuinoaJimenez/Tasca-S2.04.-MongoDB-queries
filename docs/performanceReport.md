@@ -52,7 +52,7 @@ db.restaurants.createIndex({ name: 1 });
 4. ## 📊 Query Performance Report
 
 - 🧪 **Query**: `db.restaurants.find({}, {name: 1, restaurant_id: 1, borough: 1, "address.zipcode": 1, _id: 0})`
-- ⏱️ **Execution time**: 1 ms
+- ⏱️ **Execution time**: 0 ms
 - 📚 **Documents returned**: 664
 - 🔍 **Documents examined**: 664
 - 🛠️ **Execution stage**: PROJECTION_DEFAULT
@@ -152,6 +152,17 @@ db.restaurants.createIndex({ name: 1 });
 - ⏱️ **Execution time**: 0 ms
 - 📚 **Documents returned**: 1
 - 🔍 **Documents examined**: 3
+- 🛠️ **Execution stage**: PROJECTION_SIMPLE
+
+## ✅ No significant issues detected
+
+
+13. ## 📊 Query Performance Report
+
+- 🧪 **Query**: `db.restaurants.find( { cuisine: {$ne: "American"}, "grades.grade": "A", borough: {$ne: "Brookyln"}}, { _id: 0 })`
+- ⏱️ **Execution time**: 2 ms
+- 📚 **Documents returned**: 401
+- 🔍 **Documents examined**: 664
 - 🛠️ **Execution stage**: PROJECTION_SIMPLE
 
 ## ✅ No significant issues detected
